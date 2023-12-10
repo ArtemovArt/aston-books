@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700;800&display=swap");
+
+.main-header-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+
+  height: 96px;
+  padding-right: 24px;
+  padding-left: 24px;
+  background: #2a2c2e;
+  box-shadow: inset 0px -1px 0px #e0e0e0;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+}
+
+.navigation-bar {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.book-link {
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+  font: 600 48px Caveat;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.02px;
+  white-space: pre-wrap;
+}
+.login-section {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 23.26%;
+}
+.login-button-container {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.login-button {
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 auto;
+  width: 101px;
+  height: 56px;
+  font: 600 24px Caveat;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: 0.02px;
+  cursor: pointer;
+  background: rgba(244, 206, 71, 1);
+  border: none;
+  border-radius: 16px;
+}
