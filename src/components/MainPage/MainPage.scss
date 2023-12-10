@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
+  gap: 40px;
+  max-width: 1180px;
+  margin-left: 370px;
+  margin-top: 40px;
+
+  .cards-field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+  background-color: #2a2c2e;
+}
