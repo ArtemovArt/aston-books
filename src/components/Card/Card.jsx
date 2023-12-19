@@ -1,9 +1,12 @@
 import React from "react";
 
+import { Link, useLocation } from "react-router-dom";
 import fake from "../../images/fakeCover.png";
 import classes from "./Card.module.scss";
 
-function Card({ author, title, cover }) {
+function Card({ id, author, title, cover }) {
+  const location = useLocation();
+
   return (
     <div className={classes.card}>
       <img className={classes.top_image} src={cover || fake} alt="cover" />
@@ -17,9 +20,13 @@ function Card({ author, title, cover }) {
           <div className={classes.add_btn}>
             <span className={classes.inner_font}>В избранное</span>
           </div>
-          <div className={classes.about}>
+          <Link
+            className={classes.about}
+            to={`/${id}`}
+            state={{ from: location }}
+          >
             <span className={classes.inner_font}>Подробнее</span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
