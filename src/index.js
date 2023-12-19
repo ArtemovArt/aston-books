@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import { initializeApp } from "firebase/app";
+// import { getAuth } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -9,7 +9,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./store/store";
 
-firebase.initializeApp({
+initializeApp({
   apiKey: "AIzaSyDXfTZ3psriCjUg4KJR2oPdYauc6Fg907k",
   authDomain: "aston-books-app.firebaseapp.com",
   projectId: "aston-books-app",
