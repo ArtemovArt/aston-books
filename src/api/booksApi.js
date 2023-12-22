@@ -39,7 +39,29 @@ export const booksApi = createApi({
         description: book.volumeInfo.description,
       }),
     }),
+    getSuggestedBooks: builder.query({
+      query: (query) => ({
+        url: `volumes?q=${query || "%22%22"}`,
+        params: {
+          maxResults: 5,
+          projection: "lite",
+        },
+      }),
+      transformResponse: (response) =>
+        response.items.map((item) => ({
+          id: item.id,
+          title: item.volumeInfo.title,
+          author: item.volumeInfo.authors,
+          cover: item.volumeInfo.imageLinks
+            ? item.volumeInfo.imageLinks.thumbnail
+            : null,
+        })),
+    }),
   }),
 });
 
-export const { useGetBooksQuery, useGetBooksInfoQuery } = booksApi;
+export const {
+  useGetBooksQuery,
+  useGetBooksInfoQuery,
+  useLazyGetSuggestedBooksQuery,
+} = booksApi;
