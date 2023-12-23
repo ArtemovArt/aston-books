@@ -51,7 +51,7 @@
 
 ### Дополнительные библиотеки, которые использовались
 
-- classnames для комбинирования классов при использовании css modules
+- classnames для комбинирования классов при использовании scss modules
 - react-hook-form для валидации данных [формы](src/components/Form/Form.tsx)
 - react-hot-toast для всплывающих уведомлений;
 
