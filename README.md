@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# aston-project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Предметная область: Приложение позволяет осуществлять поиск книг по названию, добавлять понравившиеся книги в избранное и сохранять поисковые запросы в истории поиска. Для добавления в избранное и сохранения поисковых запросов необходимо пройти регистрацию.
+- Использованное API: [Google Books API](https://developers.google.com/books)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Основной функционал
 
-### `npm start`
+- Регистрация и авторизация пользователей
+- Добавление в избранное: пользователь может добавлять или удалять книги из списка избранных
+- Поиск по названию книги, автору или по другим ключевым словам (например, "Фантастика"); выпадающее меню из предложенных вариантов книг
+- История поисковых запросов: сохранение названия поискового запроса, возможность перейти на страницу поиска после нажатия на название запроса
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Реализация требований
 
-### `npm test`
+### 1 уровень (обязательный)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Реализованы Требования к функциональности.
 
-### `npm run build`
+#### React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Пишем функциональные компоненты c хуками: [components](src/components), [pages](src/pages).
+- [x] Есть разделение на [умные](src/components/Card/Card.jsx) и [глупые](src/components/HistoryList/HistoryList.jsx) компоненты.
+- [x] Есть рендеринг [списков](src/pages/MainPage/MainPage.jsx).
+- [x] Реализована хотя бы одна [форма](src/components/Form/Form.jsx).
+- [x] Есть применение Контекст API: [SearchContext](src/context/searchContext.js), [Provider](src/App.jsx), [useContext](src/components/SearchForm/SearchForm.jsx).
+- [x] Есть применение предохранителя: [ErrorBoundary](src/App.jsx), [Fallback](src/components/Fallback/).
+- [x] Есть хотя бы один кастомный хук: [useAuth](src/hooks/useAuth.js) [useFav](src/hooks/useFav.js).
+- [x] Хотя бы несколько компонентов используют PropTypes: [Form](src/components/Form/Form.jsx), [Suggest](src/components/Suggest/Suggests.jsx), [ItemDetails](src/components/ItemDetails/ItemDetails.jsx).
+- [x] Использован debounce из библиотеки loadash ([debounce](src/components/SearchForm/SearchForm.jsx)).
+- [x] Есть применение [lazy + Suspense](src/router/AppRouter.jsx).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Используем Modern Redux with Redux Toolkit: [store](src/store/store.js).
+- [x] Использованы redux слайсы: [userSlise](src/store/reducers/userSlice.js).
+- [x] Есть хотя бы одна кастомная мидлвара: [userMiddleware](src/store/middlewares/userMiddleware.js).
+- [x] Используется RTK Query: [booksApi](src/api/booksApi.js)
+- [x] Используется Transforming Responses: [booksApi](src/api/booksApi.js).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2 уровень (необязательный)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] Используется Firebase: [auth](src/hooks/useAuth.js), [favourite](src/api/favApi.js), [history](src/api/historyApi.js)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Дополнительные библиотеки, которые использовались
 
-## Learn More
+- classnames для комбинирования классов при использовании css modules
+- react-hook-form для валидации данных [формы](src/components/Form/Form.tsx)
+- react-hot-toast для всплывающих уведомлений;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Deploy
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[link](https://astonbooksproject2023.netlify.app/)
