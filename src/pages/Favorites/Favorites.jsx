@@ -8,13 +8,9 @@ import "./Favorites.scss";
 
 function Favorites() {
   const { user } = useAuth();
-  const {
-    data: favourites = [],
-    isLoading,
-    isFetching,
-  } = useGetAllFavQuery(user?.email);
+  const { data: favourites = [], isLoading } = useGetAllFavQuery(user?.email);
 
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <Loader />;
   }
 
