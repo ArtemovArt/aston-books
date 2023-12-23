@@ -76,7 +76,10 @@ export default function SearchForm() {
   };
 
   const onChangeSearchValue = (e) => {
-    setSearchValue(e.target.value);
+    const newValue = e.target.value;
+    setSearchValue(newValue);
+
+    sessionStorage.setItem("searchValue", newValue);
   };
 
   const onSearchFocus = () => {
@@ -105,6 +108,13 @@ export default function SearchForm() {
   useEffect(() => {
     getSuggests(searchValue);
   }, [searchValue]);
+
+  useEffect(() => {
+    const storedSearchValue = sessionStorage.getItem("searchValue");
+    if (storedSearchValue) {
+      setSearchValue(storedSearchValue);
+    }
+  }, [setSearchValue]);
 
   return (
     <div>
