@@ -1,0 +1,18 @@
+.history-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2a2c2e;
+  min-height: calc(100vh - 153px);
+}
+
+.text {
+  font: 600 48px Caveat;
+  color: rgba(255, 255, 255, 1);
+}
+
+.empty-history {
+  font: 600 36px Caveat;
+  color: rgba(255, 255, 255, 0.596);
+  letter-spacing: 0.02px;
+}

@@ -1,0 +1,72 @@
+.search {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 6px 30px 6px 12px;
+  outline: none;
+  width: 100%;
+
+  font-family: "Roboto", sans-serif;
+  line-height: 20px;
+  color: #fff;
+  background: transparent;
+
+  border: 1px solid #fff;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  transform: translateY(-50%);
+}
+
+.suggest {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+
+  min-height: 50px;
+  max-height: 200px;
+
+  border: 1px solid #fff;
+  background: #202020;
+
+  overflow: hidden;
+
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+  overflow-y: auto;
+}
+
+.list {
+  margin: 0;
+  padding: 4px 4px 4px 12px;
+  list-style: none;
+}
+
+.item + .item {
+  margin-top: 5px;
+}
+
+.loader {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.loader path {
+  fill: #fff;
+}

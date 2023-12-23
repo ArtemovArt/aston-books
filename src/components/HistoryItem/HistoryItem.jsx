@@ -24,8 +24,9 @@ export default function HistoryItem({ historyItem, removeHistoryItem }) {
         onClick={onClickHistoryItem}
         to={`/search?name=${historyItem.name}`}
         className={classes.item_link}
-      />
-      {historyItem.name}
+      >
+        <span className={classes.link_text}>{historyItem.name}</span>
+      </Link>
     </li>
   );
 }

@@ -27,7 +27,15 @@
           }],
         "react/prop-types": 0,
         "no-unused-expressions": "error",
-        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+        "no-param-reassign": [2, { "props": false }],
+        "react/jsx-props-no-spreading": "off",
+        "jsx-a11y/label-has-associated-control": ["error", {
+            "required": {
+              "some": ["nesting", "id"]
+            }
+          }],
+        "react/button-has-type": "off"
     }
     }
 

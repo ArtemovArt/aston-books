@@ -4,14 +4,15 @@ import {
   useGetAllHistoryQuery,
   useRemoveFromeHistoryMutation,
 } from "../../api/historyApi";
-import Header from "../../components/Header/Header";
+
 import HistoryItem from "../../components/HistoryItem/HistoryItem";
 import { HistoryList } from "../../components/HistoryList/HistoryList";
 import Loader from "../../components/Loader/Loader";
 import { useAuth } from "../../hooks/useAuth";
+import "./History.scss";
 
 export default function History() {
-  const { user, isAuth, logout } = useAuth();
+  const { user } = useAuth();
   const {
     data: historyList = [],
     isLoading,
@@ -28,9 +29,8 @@ export default function History() {
   }
 
   return (
-    <>
-      <Header isAuth={isAuth} logout={logout} />
-      <h2>История поиска</h2>
+    <div className="history-wrapper">
+      <span className="text">История поиска</span>
       {historyList.length > 0 ? (
         <div className="history-container">
           <HistoryList>
@@ -44,9 +44,8 @@ export default function History() {
           </HistoryList>
         </div>
       ) : (
-        <span>Пока что здесь пусто...</span>
+        <span className="empty-history">Пока что здесь пусто...</span>
       )}
-      {/* {historyList.length > 0 ? <h2>{historyList[0].name}</h2> : <h2>Net</h2>} */}
-    </>
+    </div>
   );
 }

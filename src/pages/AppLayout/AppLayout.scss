@@ -1,0 +1,17 @@
+.layout {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  flex-grow: 1;
+}
+
+.main {
+  min-height: calc(100vh - 153px);
+  display: flex;
+  justify-content: center;
+  background-color: #2a2c2e;
+}

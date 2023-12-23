@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { auth, firestore } from "../firebase";
 
 export function Registration(email, password) {

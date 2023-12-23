@@ -1,0 +1,20 @@
+.items {
+  padding: 20px 0;
+
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background-color: #2a2c2e;
+  list-style: none;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  background-color: #2a2c2e;
+  .title-text {
+    font: 600 24px Oswald;
+    color: rgba(255, 255, 255, 1);
+  }
+}

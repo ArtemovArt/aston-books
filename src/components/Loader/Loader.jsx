@@ -4,7 +4,7 @@ import React from "react";
 function Loader() {
   return (
     <div className="loader">
-      <CircularProgress size={100} color="inherit" />
+      <CircularProgress size={50} color="inherit" />
     </div>
   );
 }

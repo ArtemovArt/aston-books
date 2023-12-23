@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
-import Header from "../../components/Header/Header";
+
 import { useAuth } from "../../hooks/useAuth";
 import { setUser } from "../../store/reducers/userSlice";
 import "./Registration.scss";
@@ -28,8 +28,7 @@ export default function RegistrationPage() {
   };
 
   return (
-    <div>
-      <Header />
+    <>
       <h2 className="entry__title">Зарегистрируйтесь, чтобы продолжить</h2>
       <Form formText="Зарегистрироваться" onFormSubmit={onFormSubmit} />
       <p className="entry__text">
@@ -38,6 +37,6 @@ export default function RegistrationPage() {
           Войти
         </Link>
       </p>
-    </div>
+    </>
   );
 }

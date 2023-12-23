@@ -1,0 +1,35 @@
+.fav_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 14px;
+  gap: 10px;
+  box-sizing: border-box;
+  border: #b10404;
+
+  background: #b10404;
+  border-radius: 25px;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten(#b10404, 5%);
+  }
+
+  .inner_font {
+    font: 600 24px Caveat;
+    color: #ffffff;
+  }
+}
+.active {
+  border: #14ee01;
+  background: #14ee01;
+  &:hover {
+    background: lighten(#14ee01, 5%);
+  }
+}
+
+.loader {
+  width: 20px !important;
+  height: 20px !important;
+}
