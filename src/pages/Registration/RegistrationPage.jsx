@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Form from "../../components/Form/Form";
 
 import { useAuth } from "../../hooks/useAuth";
@@ -10,14 +10,8 @@ import "./Registration.scss";
 
 export default function RegistrationPage() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { isAuth, register } = useAuth();
 
-  useEffect(() => {
-    if (isAuth) {
-      navigate("/");
-    }
-  }, [isAuth]);
+  const { register } = useAuth();
 
   const onFormSubmit = async (email, password) => {
     const user = await register(email, password);
