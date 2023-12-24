@@ -76,7 +76,10 @@ export default function SearchForm() {
   };
 
   const onChangeSearchValue = (e) => {
-    setSearchValue(e.target.value);
+    const newValue = e.target.value;
+    setSearchValue(newValue);
+
+    sessionStorage.setItem("searchValue", newValue);
   };
 
   const onSearchFocus = () => {
