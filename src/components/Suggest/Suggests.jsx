@@ -35,12 +35,12 @@ Suggest.propTypes = {
   className: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string,
+  author: PropTypes.arrayOf(PropTypes.string),
   cover: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 };
 
 Suggest.defaultProps = {
-  author: "No data",
+  author: ["No data"],
   cover: fake,
 };
