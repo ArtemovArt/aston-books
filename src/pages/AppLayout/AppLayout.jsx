@@ -1,15 +1,29 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Loader from "../../components/Loader/Loader";
 import { useAuth } from "../../hooks/useAuth";
+
+import { isLoading } from "../../store/selectors/userSelector";
 import "./AppLayout.scss";
 
 export default function AppLayout() {
   const { isAuth, logout } = useAuth();
-  const isUserLoading = useSelector((state) => state.userReducer.isLoading);
+  const isUserLoading = useSelector(isLoading);
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (
+      isAuth &&
+      (location.pathname === "/signin" || location.pathname === "/signup")
+    ) {
+      navigate("/");
+    }
+  }, [isAuth]);
 
   return (
     <div className="layout">
