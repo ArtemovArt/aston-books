@@ -106,6 +106,13 @@ export default function SearchForm() {
     getSuggests(searchValue);
   }, [searchValue]);
 
+  useEffect(() => {
+    const storedSearchValue = sessionStorage.getItem("searchValue");
+    if (storedSearchValue) {
+      setSearchValue(storedSearchValue);
+    }
+  }, [setSearchValue]);
+
   return (
     <div>
       <div className={classes.search}>
