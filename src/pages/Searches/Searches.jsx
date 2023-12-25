@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
 import { useSearchParams } from "react-router-dom";
 import { useGetBooksQuery } from "../../api/booksApi";
 import Card from "../../components/Card/Card";
-
 import Loader from "../../components/Loader/Loader";
+import { SearchContext } from "../../context/searchContext";
 
 import "./Searches.scss";
 
@@ -11,6 +12,11 @@ export default function Searches() {
   const [searchParams] = useSearchParams();
 
   const searchName = searchParams.get("name");
+
+  const { setSearchValue } = useContext(SearchContext);
+  useEffect(() => {
+    setSearchValue(searchName);
+  }, [searchName]);
   const {
     data: booksList = [],
     isLoading,
